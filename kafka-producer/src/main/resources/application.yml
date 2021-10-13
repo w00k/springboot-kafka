@@ -1,0 +1,28 @@
+server:
+  port: 8080
+app:
+  kafka:
+    suscribe:
+      topic: ${TOPIC:XXXX-XXXXXX-stream-XXXXX}
+      user: ${USER:cloud/stream-XXXX-noprod/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
+      token: ${TOKEN:XXXXXXXXXXXXXXXXXX}
+      bootstrap-servers: ${BOOTSTRAP_SERVERS:XXXXXXXXXXXXXX:9092}
+      security-protocol: ${SECURITY_PROTOCOL:SASL_SSL}
+      sasl-mechanism: ${SASL_MECHANISM:PLAIN}
+      key-serializer: ${KEY_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
+      value-serializer: ${VALUE_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
+      jas-config: ${JAS_CONFIG:org.apache.kafka.common.security.plain.PlainLoginModule required}
+      ssl-mechanism: ${SSL_MECHANISM:PLAIN}
+      group-id-config: ${GROUP_ID_CONFIG:XXXXXXXXXXXXXXXXXXXXXXXX}
+    retry:
+      topic: ${TOPIC:XXXXX-XXXX-stream-retry-XXXXX}
+      user: ${USER:cloud/stream-XXXX-noprod/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
+      token: ${TOKEN:XXXXXXXXXXXXXXXXXX}
+      bootstrap-servers: ${BOOTSTRAP_SERVERS:XXXXXXXXXXXXXX:9092}
+      security-protocol: ${SECURITY_PROTOCOL:SASL_SSL}
+      sasl-mechanism: ${SASL_MECHANISM:PLAIN}
+      key-serializer: ${KEY_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
+      value-serializer: ${VALUE_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
+      jas-config: ${JAS_CONFIG:org.apache.kafka.common.security.plain.PlainLoginModule required}
+      ssl-mechanism: ${SSL_MECHANISM:PLAIN}
+      group-id-config: ${RETRY_SGROUP_ID_CONFIG:XXXXXXXXXXXXXXXXXXXXXXXX}

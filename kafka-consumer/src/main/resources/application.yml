@@ -1,0 +1,28 @@
+server:
+  port: 8081
+app:
+  kafka:
+    subscribe:
+      topic: ${TOPIC:XXXXX-XXXXX-stream-XXXXX}
+      user: ${USER:cloud/stream-XXXXX-noprod/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
+      token: ${TOKEN:XXXXXXXXXXXXXXXXXX}
+      bootstrap-servers: ${BOOTSTRAP_SERVERS:XXXXXXXXXXXXXX:9092}
+      security-protocol: ${SECURITY_PROTOCOL:SASL_SSL}
+      sasl-mechanism: ${SASL_MECHANISM:PLAIN}
+      key-deserializer: ${KEY_SERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+      value-deserializer: ${VALUE_SERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+      jas-config: ${JAS_CONFIG:org.apache.kafka.common.security.plain.PlainLoginModule required}
+      ssl-mechanism: ${SSL_MECHANISM:PLAIN}
+      group-id-config: ${GROUP_ID_CONFIG:XXXXXXXXXXXXXXXXXXXXXXXX}
+    retry:
+      topic: ${RETRY_TOPIC:XXXX-XXXXX-stream-retry-XXXXX}
+      user: ${RETRY_USER:tdecloud/stream-allot-noprod/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
+      token: ${RETRY_TOKEN:XXXXXXXXXXXXXXXXXX}
+      bootstrap-servers: ${RETRY_BOOTSTRAP_SERVERS:XXXXXXXXXXXXXX:9092}
+      security-protocol: ${RETRY_SECURITY_PROTOCOL:SASL_SSL}
+      sasl-mechanism: ${RETRY_SASL_MECHANISM:PLAIN}
+      key-deserializer: ${RETRY_KEY_SERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+      value-deserializer: ${RETRY_VALUE_SERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+      jas-config: ${RETRY_JAS_CONFIG:org.apache.kafka.common.security.plain.PlainLoginModule required}
+      ssl-mechanism: ${RETRY_SSL_MECHANISM:PLAIN}
+      group-id-config: ${RETRY_SGROUP_ID_CONFIG:XXXXXXXXXXXXXXXXXXXXXXXX}
